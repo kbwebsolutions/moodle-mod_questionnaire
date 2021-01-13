@@ -808,7 +808,7 @@ function xmldb_questionnaire_upgrade($oldversion=0) {
         upgrade_mod_savepoint(true, 2018050106, 'questionnaire');
     }
 
-    if ($oldversion < 2018110103) {
+    if ($oldversion < 2020082400) { //original date 20181103013
 
         // Define field id to be added to questionnaire_question.
         $table = new xmldb_table('questionnaire_question');
@@ -826,7 +826,7 @@ function xmldb_questionnaire_upgrade($oldversion=0) {
         upgrade_mod_savepoint(true, 2018110103, 'questionnaire');
     }
 
-    if ($oldversion < 2020011507) {
+    if ($oldversion < 2020082400) {
         // This operation might take a while. Cancel PHP timeouts for this.
         \core_php_time_limit::raise();
 
