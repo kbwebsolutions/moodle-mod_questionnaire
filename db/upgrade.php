@@ -808,7 +808,7 @@ function xmldb_questionnaire_upgrade($oldversion=0) {
         upgrade_mod_savepoint(true, 2018050106, 'questionnaire');
     }
 
-    if ($oldversion < 2020082400) { //original date 20181103013
+    if ($oldversion < 2020082200) { //original date 20181103013
 
         // Define field id to be added to questionnaire_question.
         $table = new xmldb_table('questionnaire_question');
@@ -823,10 +823,10 @@ function xmldb_questionnaire_upgrade($oldversion=0) {
         \mod_questionnaire\question\rate::move_all_nameddegree_choices();
 
         // Questionnaire savepoint reached.
-        upgrade_mod_savepoint(true, 2018110103, 'questionnaire');
+        upgrade_mod_savepoint(true, 2020082200, 'questionnaire');
     }
 
-    if ($oldversion < 2020082400) {
+    if ($oldversion < 2020082300) {
         // This operation might take a while. Cancel PHP timeouts for this.
         \core_php_time_limit::raise();
 
@@ -963,7 +963,7 @@ function xmldb_questionnaire_upgrade($oldversion=0) {
         $dbman->add_key($table, $key);
 
         // Questionnaire savepoint reached.
-        upgrade_mod_savepoint(true, 2020011507, 'questionnaire');
+        upgrade_mod_savepoint(true, 2020082300, 'questionnaire');
     }
 
     //Add field to switch to comparing against first attempt
